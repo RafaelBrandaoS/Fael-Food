@@ -11,7 +11,9 @@
     <header>
         <div class="cabecalho">
             <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo">
-            <button id="butao-carrinho" class="carrinho"><span class="material-symbols-outlined">shopping_cart</span></button>
+            <div class="menu-butoes">
+                <button id="butao-carrinho" class="btn-menu"><span class="material-symbols-outlined">shopping_cart</span></button>
+            </div>
         </div>
         <div id="itens-carrinho" class="itens-carrinho">
             <h3>Carrinho</h3>
@@ -44,37 +46,76 @@
             <div>
                 <h2>ESTÁ COM FOME?</h2>
                 <p>Faça agora o seu pedido!</p>
-                <p>quarta á domingo das 10:00 as 23:00</p>
+                <p class="funcinamento">quarta á domingo das 10:00 as 23:00</p>
             </div>
-            <img src="#" alt="Prato-Proncipal">
+            <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Prato-Proncipal">
         </section>
         <section class="dias">
-            <button>qua</button>
-            <button>qui</button>
-            <button>sex</button>
-            <button>sab</button>
-            <button>dom</button>
+            <button>quarta</button>
+            <button>quinta</button>
+            <button>sexta</button>
+            <button>sabado</button>
+            <button>domingo</button>
         </section>
         <section class="catalogo">
+            <h2>Pratos</h2>
             <div class="produto">
-                <img src="#" alt="Produto-img">
-                <div>
+                <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Produto-img">
+                <div class="dados-produto">
                     <h3>Feijoada</h3>
                     <p>acompanha arroz, feijão, farofa e cove.</p>
-                    <div>
-                        <p>R$ 24.00</p>
-                        <button><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    <p>R$ <span>24.00</span> un.</p>
+                    <div class="butoes-produto">
+                        <p><button>-</button><span class="quantidade">1</span><button>+</button></p>
+                        <button class="carrinho-add"><span class="material-symbols-outlined">add_shopping_cart</span></button>
                     </div>
                 </div>
             </div>
             <div class="produto">
-                <img src="#" alt="Produto-img">
-                <div>
-                    <h3>Carne Assada</h3>
+                <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Produto-img">
+                <div class="dados-produto">
+                    <h3>Feijoada</h3>
                     <p>acompanha arroz, feijão, farofa e cove.</p>
-                    <div>
-                        <p>R$ 22.00</p>
-                        <button><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    <p>R$ <span>24.00</span> un.</p>
+                    <div class="butoes-produto">
+                        <p><button>-</button><span class="quantidade">1</span><button>+</button></p>
+                        <button class="carrinho-add"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Produto-img">
+                <div class="dados-produto">
+                    <h3>Feijoada</h3>
+                    <p>acompanha arroz, feijão, farofa e cove.</p>
+                    <p>R$ <span>24.00</span> un.</p>
+                    <div class="butoes-produto">
+                        <p><button>-</button><span class="quantidade">1</span><button>+</button></p>
+                        <button class="carrinho-add"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Produto-img">
+                <div class="dados-produto">
+                    <h3>Feijoada</h3>
+                    <p>acompanha arroz, feijão, farofa e cove.</p>
+                    <p>R$ <span>24.00</span> un.</p>
+                    <div class="butoes-produto">
+                        <p><button>-</button><span class="quantidade">1</span><button>+</button></p>
+                        <button class="carrinho-add"><span class="material-symbols-outlined">add_shopping_cart</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="produto">
+                <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Produto-img">
+                <div class="dados-produto">
+                    <h3>Feijoada</h3>
+                    <p>acompanha arroz, feijão, farofa e cove.</p>
+                    <p>R$ <span>24.00</span> un.</p>
+                    <div class="butoes-produto">
+                        <p><button>-</button><span class="quantidade">1</span><button>+</button></p>
+                        <button class="carrinho-add"><span class="material-symbols-outlined">add_shopping_cart</span></button>
                     </div>
                 </div>
             </div>
