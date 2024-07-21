@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilos.css') }}">
+    <title>Admin - catalogo</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo">
+        <div class="menu-butoes">
+            <button id="butao-carrinho" class="btn-menu"><span class="material-symbols-outlined">undo</span></button>
+        </div>
+    </header>
+    <main>
+        <section class="catalogo">
+            {% for produto in produtos %}
+                    <div class="produto {% if produto[6] == 'disponivel' %} disponivel {% else %} indisponivel {% endif %}">
+                        <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="{{ produto[1]}}">
+                        <div class="dados-produto">
+                            <h3 class="nome-produto">{{ produto[1] }}</h3>
+                            <p class="tamanho-produto">{{ produto[2] }}</p>
+                            <p>Está disponível</p>
+                            <div class="butoes-produto">
+                                <a href="{{ url_for('disponivel', nomeProduto=produto[1]) }}" class="material-symbols-outlined produtos-status">check</a>
+                                <a href="{{ url_for('indisponivel', nomeProduto=produto[1]) }}" class="material-symbols-outlined produtos-status">close</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>
