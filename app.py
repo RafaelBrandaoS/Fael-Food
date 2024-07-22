@@ -1,5 +1,7 @@
+import urllib.parse
 from flask import Flask, url_for, render_template, request, redirect, flash
 from python.produtos import lista_produtos, atualiza_disponivel,atualiza_indisponivel
+import urllib
 import os
 from dotenv import load_dotenv
 
@@ -67,8 +69,6 @@ def indisponivel(nomeProduto):
     " produto indisponivel "
     atualiza_indisponivel(nomeProduto)
     return redirect('/admin/')
-
-
 
 
 if __name__ == '__main__':

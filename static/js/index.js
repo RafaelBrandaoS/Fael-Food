@@ -35,6 +35,9 @@ function eventos() {
         qtdProduto[i].addEventListener("change", atualizarTotal)
     }
 
+    const btnFinalizarPedido = document.getElementById('finalizar-pedido')
+    btnFinalizarPedido.addEventListener('click', finalizarPedido)
+
 }
 
 
@@ -97,6 +100,33 @@ function adicionarAoCarrinho(event) {
 function removerProduto(event) {
     event.target.parentElement.remove()
     atualizarTotal()
+}
+
+function finalizarPedido(event) {
+    const btn = event.target
+    const infos = btn.parentElement.parentElement
+    const elementNome = infos.getElementsByClassName('nome-produto-carrinho')
+    const elementQtd = infos.getElementsByClassName('qtd-produto')
+    const elementPreco = infos.getElementsByClassName('preco-produto-carrinho')
+    const elementTamanho = infos.getElementsByClassName('tamanho-produto-carrinho')
+    const total = document.getElementById('tota-pedido').innerText
+    let dados = []
+    for(var i = 0; i < elementNome.length; i++) {
+        let nome = elementNome[i].innerText
+        let Qtd = elementQtd[i].value
+        let preco = elementPreco[i].innerText
+        let tamanho = elementTamanho[i].innerText
+        dados.push({'nome': nome, 'quantidade': Qtd,'preco': preco, 'tamanho': tamanho})
+    }
+    let mensagem = "Olá gostaria de fazer um pedido:\n\n"
+    for(var i = 0; i < dados.length; i++) {
+        let produto = dados[i]
+        mensagem += `${produto['quantidade']}x ${produto['nome']} ${produto['tamanho']} R$${produto['preco']} \n`
+    }
+    mensagem += `\nTotal: R$${total}`
+
+    const msgCod = encodeURIComponent(mensagem)
+    window.location.href = `https://wa.me/5561991551963/?text=${msgCod}`
 }
 
 /* produtos */

@@ -23,9 +23,7 @@
             </div>
             <div class="finalizar">
                 <h4>total: R$ <span id="tota-pedido">00.00</span></h4>
-                <label for="endereco">Endereço da entrega:</label>
-                <input type="text" name="endereco" id="endereco" placeholder="Digite o endereço da entrega">
-                <button>Finalizar Pedido</button>
+                <button id="finalizar-pedido">Finalizar Pedido</button>
             </div>
         </div>
     </header>
@@ -43,7 +41,7 @@
             {% for produto in produtos %}
                 {% if produto[6] == 'disponivel' and produto[5] == 'PRATOS' %}
                 <div class="produto">
-                    <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="{{ produto[1]}}">
+                    <img src="{{ url_for('static', filename=produto[4]) }}" alt="{{ produto[1]}}">
                     <div class="dados-produto">
                         <h3 class="nome-produto">{{ produto[1] }}</h3>
                         <p class="tamanho-produto">{{ produto[2] }}</p>

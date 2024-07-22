@@ -18,7 +18,7 @@
         <section class="catalogo">
             {% for produto in produtos %}
                     <div class="produto {% if produto[6] == 'disponivel' %} disponivel {% else %} indisponivel {% endif %}">
-                        <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="{{ produto[1]}}">
+                        <img src="{{ url_for('static', filename=produto[4]) }}" alt="{{ produto[1]}}">
                         <div class="dados-produto">
                             <h3 class="nome-produto">{{ produto[1] }}</h3>
                             <p class="tamanho-produto">{{ produto[2] }}</p>
