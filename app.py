@@ -1,7 +1,5 @@
-import urllib.parse
 from flask import Flask, url_for, render_template, request, redirect, flash
 from python.produtos import lista_produtos, atualiza_disponivel,atualiza_indisponivel
-import urllib
 import os
 from dotenv import load_dotenv
 
