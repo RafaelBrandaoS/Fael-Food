@@ -37,6 +37,7 @@ body {
 
 .logo {
     width: 100px;
+    transform: rotateZ(-8deg);
 }
 
 .menu-butoes {
@@ -298,3 +299,20 @@ body {
 
 /* main */
 
+/* footer */
+
+footer {
+    background-color: #000;
+    color: #fff;
+    margin-top: 20px;
+    box-shadow: 0px -2px 3px #00000065;
+}
+
+.contatos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* footer */

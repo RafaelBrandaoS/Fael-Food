@@ -126,7 +126,7 @@ function finalizarPedido(event) {
     mensagem += `\nTotal: R$${total}`
 
     const msgCod = encodeURIComponent(mensagem)
-    window.location.href = `https://wa.me/5561991551963/?text=${msgCod}`
+    window.location.href = `https://wa.me/5561985268236/?text=${msgCod}`
 }
 
 /* produtos */

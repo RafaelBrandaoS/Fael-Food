@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos/estilos.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
-    <title>Fael - Food</title>
+    <title>Sabor Mineiro da Vovó</title>
 </head>
 <body>
     <header>
         <div class="cabecalho">
-            <img class="logo" src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo">
+            <a href="#"><img class="logo" src="{{ url_for('static', filename='imagens/saborMineiroLogo.png') }}" alt="Logo"></a>
             <div class="menu-butoes">
                 <button id="butao-carrinho" class="btn-menu"><span class="material-symbols-outlined">shopping_cart</span></button>
                 <span id="qtd-itens">0</span>
@@ -57,7 +57,7 @@
             {% for produto in produtos %}
                 {% if produto[6] == 'disponivel' and produto[5] == 'BEBIDAS' %}
                 <div class="produto">
-                    <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="{{ produto[1]}}">
+                    <img src="{{ url_for('static', filename=produto[4]) }}" alt="{{ produto[1]}}">
                     <div class="dados-produto">
                         <h3 class="nome-produto">{{ produto[1] }}</h3>
                         <p class="tamanho-produto">{{ produto[2] }}</p>
@@ -72,7 +72,17 @@
         </section>
     </main>
     <footer>
-        
+        <div class="contatos">
+            <div>
+                <p>Contatos:</p>
+                <p>(61) 9 8526-8236</p>
+            </div>
+            <div>
+                <p>Sociais:</p>
+                <a href="https://www.instagram.com/sabormineirodavovo/"><img src="{{ url_for('static', filename='imagens/instagram.png') }}" alt="instagram"></a>
+            </div>
+        </div>
+        <p>site criado por <a href="https://www.instagram.com/fael.bs7">Rafael Brandão</a></p>
     </footer>
 </body>
 </html>
