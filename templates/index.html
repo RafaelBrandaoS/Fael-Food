@@ -8,6 +8,15 @@
     <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
     <title>Sabor Mineiro da Vovó</title>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQKC0F6HRB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-SQKC0F6HRB');
+</script>
 <body>
     <header>
         <div class="cabecalho">
@@ -32,7 +41,7 @@
             <div>
                 <h2>ESTÁ COM FOME?</h2>
                 <p>Faça agora o seu pedido!</p>
-                <p class="funcinamento">quarta á domingo das 10:00 as 23:00</p>
+                <p class="funcinamento">De 11:30 as 14:00</p>
             </div>
             <img src="{{ url_for('static', filename='imagens/feijoada_foto.png') }}" alt="Prato-Proncipal">
         </section>
