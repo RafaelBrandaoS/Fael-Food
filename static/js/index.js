@@ -109,7 +109,6 @@ function finalizarPedido(event) {
     const elementQtd = infos.getElementsByClassName('qtd-produto')
     const elementPreco = infos.getElementsByClassName('preco-produto-carrinho')
     const elementTamanho = infos.getElementsByClassName('tamanho-produto-carrinho')
-    const total = document.getElementById('tota-pedido').innerText
     let dados = []
     for(var i = 0; i < elementNome.length; i++) {
         let nome = elementNome[i].innerText
@@ -123,7 +122,7 @@ function finalizarPedido(event) {
         let produto = dados[i]
         mensagem += `${produto['quantidade']}x ${produto['nome']} ${produto['tamanho']} R$${produto['preco']} \n`
     }
-    mensagem += `\nTotal: R$${total}`
+    mensagem += `\nobigado!`
 
     const msgCod = encodeURIComponent(mensagem)
     window.location.href = `https://wa.me/5561984464789/?text=${msgCod}`
