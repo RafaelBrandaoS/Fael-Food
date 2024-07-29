@@ -3,7 +3,7 @@ from python.conexao import criar_conexao, fexar_conexão
 def lista_produtos():
     con = criar_conexao()
     cursor = con.cursor()
-    sql = "select * from produtos where sessao = 'PRATOS' order by nome"
+    sql = "select * from produtos order by nome"
     cursor.execute(sql)
     produtos = cursor.fetchall()
     cursor.close()
